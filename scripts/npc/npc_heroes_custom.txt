@@ -1,0 +1,14 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{ 
+  "npc_dota_hero_colonist"
+	{
+		"override_hero"				"npc_dota_hero_sven"			// Hero to override
+		"Ability1"					"colonist_build_base"		// Ability 1
+    "Ability2"					""		// Ability 1
+    "Ability3"					""		// Ability 1
+    "Ability4"					""		// Ability 1
+	}
+}

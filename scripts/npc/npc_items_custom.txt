@@ -1,0 +1,15 @@
+"DOTAAbilities"
+{
+  "item_dd_wood"
+  {
+    "ID" "4013"
+    "BaseClass" "item_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName" "item_branches"
+
+    "ItemCost" "20"
+    "ItemStackable"					"1"
+    "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemInitialCharges"				"1"
+  }
+}

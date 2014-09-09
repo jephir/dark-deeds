@@ -1,0 +1,285 @@
+// Units File
+"DOTAUnits"
+{
+	"Version"	"1"
+  
+  "npc_dota_building_homebase"	
+	{   
+    "BaseClass" "npc_dota_creature"
+    "Model" "models/buildings/building_plain_reference.vmdl"
+    "SoundSet" "Hero_Tinker"
+    "GameSoundsFile" "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+    "Level" "1"
+    "ModelScale" "2.5"
+    "Ability1" "colonist_get_married"
+    "Ability2" ""
+    "Ability3" ""
+    "Ability4" ""
+    "Ability5" ""
+    "AttackCapabilities" "DOTA_UNIT_CAP_NO_ATTACK"
+    "BoundsHullName" "DOTA_HULL_SIZE_BUILDING"
+    "MovementCapabilities" "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed" "0"
+    "MovementTurnRate" "0.5"
+    "BountyXP" "0"
+    "BountyGoldMin" "0"
+    "BountyGoldMax" "0"
+    "StatusHealth" "150"
+    "StatusHealthRegen" "0.25"
+    "StatusMana" "0"
+    "StatusManaRegen" "0"
+    "TeamName" "DOTA_TEAM_GOODGUYS"
+    "UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange" "1800"
+    "VisionNighttimeRange" "1800"
+    "HasInventory" "0"
+  }
+  
+  "npc_dota_unit_wife"
+	{
+    "Model" "models/heroes/crystal_maiden/crystal_maiden.vmdl"
+    "BaseClass"	"npc_dota_creature"
+    "SoundSet" "Hero_Crystal"
+    "GameSoundsFile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+    "MovementCapabilities" "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed" "340"
+    "MovementTurnRate" "0.5"
+      
+    "Creature"
+    {
+      "CanRespawn" "0"
+      "AttachWearables"
+      {
+        "Wearable1"
+        {
+          "ItemDef" "38"
+        }
+        "Wearable2"
+        {
+          "ItemDef" "39"
+        }
+        "Wearable3"
+        {
+          "ItemDef" "40"
+        }
+        "Wearable4"
+        {
+          "ItemDef" "41"
+        }
+        "Wearable5"
+        {
+          "ItemDef" "311"
+        }
+      }
+    }
+	}
+  
+  "npc_dota_unit_son"
+	{
+    "Model" "models/heroes/sven/sven.vmdl"
+    "BaseClass"	"npc_dota_creature"
+    "ModelScale" ".45"
+    "SoundSet" "Hero_Sven"
+    "GameSoundsFile" "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+    "MovementCapabilities" "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed" "340"
+    "MovementTurnRate" "0.5"
+    
+    "Ability1" "worker_gather_wood"
+    "Ability2" "worker_return_wood"
+    "vscripts" "worker.lua"
+    
+    "Creature"
+    {
+      "CanRespawn" "0"
+      "AttachWearables"
+      {
+        "Wearable1"
+        {
+          "ItemDef" "16"
+        }
+        "Wearable2"
+        {
+          "ItemDef" "17"
+        }
+        "Wearable3
+        {
+          "ItemDef" "18"
+        }
+        "Wearable4"
+        {
+          "ItemDef" "19"
+        }
+        "Wearable5"
+        {
+          "ItemDef" "20"
+        }
+      }
+    }
+  }
+	
+	//=================================================================================	
+	// Creature: Gnoll Assassin
+	//=================================================================================
+	"npc_dota_creature_gnoll_assassin"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll_frost.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				".9"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"36"		// Damage range max.
+		"AttackRate"				"1.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"500"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/neutral_fx/gnoll_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1500"		// Speed of projectile.		     
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"170"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"24"		// Experience earn.
+		"BountyGoldMin"				"21"		// Gold earned min.
+		"BountyGoldMax"				"29"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"75"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
+  
+  
+
+//=================================================================================	
+	// Building : Shelter
+	//=================================================================================
+	"npc_dota_builder_shelter"
+	{
+	
+		// General
+		//-----------------------------------------------------------------------------
+		"BaseClass"					"npc_dota_tower"
+		"Model"						"models/buildings/building_plain_reference.vmdl"
+		"ModelScale"				"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		"Level"						"1"
+		
+		// Abilities
+		//-----------------------------------------------------------------------------
+		"Ability1"					"shelter_create_harvester"		// Ability 1
+		"Ability2"					""								// Ability 2.
+		"Ability3"					""								// Ability 3.
+		"Ability4"					""								// Ability 4.
+		"Ability5"					""								// Ability 5.
+		"Ability6"					""								// Ability 6 - Extra.
+		"Ability7"					""								// Ability 7 - Extra.
+		"Ability8"					""								// Ability 8 - Extra.
+		
+		// Armor
+		//-----------------------------------------------------------------------------
+		"ArmorPhysical"				"20"				// Physical protection.
+		"MagicalResistance"				"0"				// Magical protection.
+		
+		// Attack
+		//-----------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		
+		// Attributes
+		//-----------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"							// Base strength
+		"AttributeStrengthGain"		"0"							// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"							// Base intelligence
+		"AttributeIntelligenceGain"	"0"							// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"							// Base agility
+		"AttributeAgilityGain"		"0"							// Agility bonus per level.
+		
+		// Bounds
+		//-----------------------------------------------------------------------------
+		"HealthbarOffset"			"400"
+		
+		// Movement
+		//-----------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"	
+		
+		//Stats
+		//-----------------------------------------------------------------------------
+		"ArmorPhysical"				"15"	//Physical Protection
+		"MagicalResistance"			"0"		//Its a building
+		
+		//Status
+		//-----------------------------------------------------------------------------
+		"StatusHealth"				"300"	//Building HP
+		"StatusHealthRegen"			"0"		//Health Regeneration Rate
+		
+		// Team
+		//-----------------------------------------------------------------------------
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+	}
+
+
+}

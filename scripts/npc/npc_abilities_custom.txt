@@ -1,0 +1,136 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+  
+  "colonist_build_base"
+  {
+    "BaseClass" "ability_datadriven"
+    
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityCastRange" "300"
+    "AbilityManaCost" "0"
+    "AbilityChannelTime" "1"
+    "AbilityTextureName" "meepo_geostrike"
+    
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      {
+        "Target" "POINT"
+        "ScriptFile" "scripts/vscripts/ability.lua"
+        "Function" "ColonistBuildBase"
+      }
+      
+      "RemoveAbility"
+      {
+        "Target" "CASTER"
+        "AbilityName" "colonist_build_base"
+      }
+    }
+  }
+  
+  "colonist_get_married"
+  {
+    "BaseClass" "ability_datadriven"
+    
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityChannelTime" "0.5"
+    "AbilityTextureName" "crystal_maiden_brilliance_aura"
+    
+    "OnChannelSucceeded"
+    {
+      "SpawnUnit"
+      {
+        "UnitName" "npc_dota_unit_wife"
+        "UnitCount" "1"
+        "SpawnRadius" "350"
+        "Target" "CASTER"
+      }
+      
+      "RemoveAbility"
+      {
+        "Target" "CASTER"
+        "AbilityName" "colonist_get_married"
+      }
+      
+      "AddAbility"
+      {
+        "Target" "CASTER"
+        "AbilityName" "base_have_kids"
+      }
+      
+      "RunScript"
+      {
+        "Target" "CASTER"
+        "ScriptFile" "scripts/vscripts/ability.lua"
+        "Function" "BaseEnableHaveKids"
+      }
+    }
+  }
+  
+  "base_have_kids"
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityTextureName" "meepo_divided_we_stand"
+    
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityCastRange" "0"
+    "AbilityCastPoint" "0"
+    "AbilityChannelTime" "0.5"
+    
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      {
+        "Target" "POINT"
+        "ScriptFile" "scripts/vscripts/ability.lua"
+        "Function" "BaseHaveKids"
+      }
+    }
+  }
+  
+  "worker_gather_wood"
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+    "AbilityUnitTargetType" "DOTA_UNIT_TARGET_TREE"
+    "AbilityCastAnimation" "ACT_DOTA_ATTACK"
+    "AbilityCastRange" "150"
+    "AbilityCastPoint" "1"
+    "AbilityTextureName" "troll_warlord_whirling_axes_ranged"
+    
+    "OnSpellStart"
+    {        
+      "RunScript"
+      {
+        "Target" "POINT"
+        "ScriptFile" "scripts/vscripts/ability.lua"
+        "Function" "WorkerGatherWood"
+      }
+    }
+  }
+  
+  "worker_return_wood"
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP"
+    "AbilityTextureName" "kunkka_x_marks_the_spot"
+    
+    "AbilityCastRange" "250"
+    
+    "OnSpellStart"
+    {        
+      "RunScript"
+      {
+        "Target" "CASTER"
+        "ScriptFile" "scripts/vscripts/ability.lua"
+        "Function" "WorkerReturnWood"
+      }
+    }
+  }
+}
